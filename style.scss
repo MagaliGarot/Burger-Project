@@ -3,12 +3,13 @@
 $sizepictureLarge: 350px;
 $sizepictureMedium: 250px;
     /*-BORDER-*/
-$borderRadius: 45px;
+$borderRadius: 25px;
     /*-COLOR-*/
 $backgroundWhite: white;
 $backgroundgraylight: #f8f7f5;
     /*-TEXT-*/
-$textCenter: center;
+$center: center;
+$marginTextBurger:35px 35px;
 
 /*-----------Mixin-----------*/
 @mixin color($element, $value){
@@ -36,6 +37,12 @@ a {
     text-decoration: none;
 }
 
+button{
+    border:none;
+    border-radius: $borderRadius;
+}
+
+
 body {
     @include color(background,$backgroundgraylight);
 }
@@ -47,34 +54,54 @@ main {
     width: 1500px ;
     height:1400px ;
     margin-top: 100px;
-}
 
 /*-----------MENU-----------*/
-
-#Menu {
+    #Menu {
     /*CONTAINER FLEX*/
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+
+  .Menu_link {
+    height: 6vw;
+    width: 6vw;
+    text-align: center;
+    padding: 3px 3px;
+    @include color(color,black);
+    font-weight: 700;
+    font-size: 0,8em;
+    font-family: serif;
+    margin-top: 60px;
+  }
+  
+  .Menu_link:hover {
+    color:lightgray;
+    font-weight: 800;
+    font-size: 1em;
+  }
+
 }
 
-.Menu_link {
-  height: 6vw;
-  width: 6vw;
-  text-align: center;
-  padding: 3px 3px;
-  color: black;
-  font-weight: 700;
-  font-size: 0,8em;
-  font-family: serif;
-  margin-top: 60px;
-}
+.click{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: -120px;
+    margin-right: 20px;
 
-.Menu_link:hover {
-  color:lightgray;
-  font-weight: 800;
-  font-size: 1em;
-}
+.click_log{
+    @include color(background,#f06c4e);
+    @include color(color,white);
+    padding: 15px 40px;
+    margin-right: 20px;
+  }
 
+  .click_sign{
+    @include color(background,#fef0ed);
+    @include color(color,#f06c4e);
+    padding: 15px 40px;
+  }
+
+}
 
 /*-----------CONTAINER-----------*/
 .container {
@@ -92,46 +119,76 @@ main {
     margin: 60px 20px 20px 20px;
 
     /*-----------CARD-----------*/
-    .container--columnOne {
+    &_columnOne {
         @include color(background,$backgroundWhite);
         border-radius: $borderRadius;
         border: solid 1px #e8eaed;
-        margin-bottom: 30px
+        margin-bottom: 30px;
+
+        &_picture {
+            width: $sizepictureLarge;
+            display: block;
+            @include margin();
+        }
+
+        &_title{
+            margin: $marginTextBurger;
+        }
+
+        &_text{
+            margin: $marginTextBurger;
+        }
     }
 
-    .container--columnTwo_card {
+    .container_columnTwo_card {
         @include color(background,$backgroundgraylight);
         border-radius: $borderRadius;
         width: 400px;
         height: 500px;
-        margin-bottom: 30px
-    }
+        margin-bottom: 30px;
+        text-align:$center;
 
-    .container--columnThree_card {
-        @include color(background,$backgroundgraylight);
-        border-radius: $borderRadius;
-        width: 400px;
-        height: 500px;
-        margin-bottom: 30px
-    }
+        &_picture {
+            width: $sizepictureMedium;
+            display: block;
+            @include margin();
+        }
 
-    .container--columnOne_picture {
-        width: $sizepictureLarge;
-        display: block;
-        @include margin();
+        &_title{
+            text-align: $center;
+            margin: $marginTextBurger;
+
+        }
     
+        &_text{
+            text-align: $center;
+            margin: $marginTextBurger;
+        }
     }
 
-    .container--columnTwo_picture {
-        width: $sizepictureMedium;
-        display: block;
-        @include margin();
-    }
+    .container_columnThree_card {
+        @include color(background,$backgroundgraylight);
+        border-radius: $borderRadius;
+        width: 400px;
+        height: 500px;
+        margin-bottom: 30px;
 
-    .container--columnThree_picture {
-        width: $sizepictureMedium;
-        display: block;
-        @include margin();
+        &_picture {
+            width: $sizepictureMedium;
+            display: block;
+            @include margin();
+        }
+
+        &_title{
+            text-align: $center;
+            margin: $marginTextBurger;
+        }
+    
+        &_text{
+            text-align: $center;
+            margin: $marginTextBurger;
+        }
     }
+}    
 
 }
