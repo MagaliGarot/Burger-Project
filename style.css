@@ -134,6 +134,41 @@ main .container_columnOne_text {
   margin: 35px 35px;
 }
 
+main .container_columnOne_click_one {
+  background: #eff0f2;
+  width: 40px;
+  height: 65px;
+  /*BORDER*/
+  border: 1px #eff0f2;
+  margin-right: -15px;
+  margin-left: 30px;
+  /*BORDER*/
+  border-radius: 10px;
+  border-style: none none none solid;
+}
+
+main .container_columnOne_click_two {
+  background: #eff0f2;
+  width: 40px;
+  height: 65px;
+  /*BORDER*/
+  border: 1px #eff0f2;
+  /*BORDER*/
+  border-radius: 0px;
+  border-style: none none none none;
+}
+
+main .container_columnOne_click_three {
+  background: #eff0f2;
+  width: 40px;
+  height: 65px;
+  /*BORDER*/
+  border: 1px #eff0f2;
+  margin-left: -15px;
+  border-radius: 10px;
+  border-style: none solid none none;
+}
+
 main .container .container_columnTwo_card {
   background: #f8f7f5;
   border-radius: 25px;
