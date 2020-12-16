@@ -5,10 +5,21 @@
     <head>
         <meta charset="utf-8" />
         <title> Page Burger </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
         <link rel = "stylesheet" href="style.css">
     </head>
+    
 
     <body>
+        <aside>
+            <div class="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+        </aside>
 
         <main>
             <!----- MENU ---->
@@ -31,36 +42,82 @@
             <div class="container">
                  <!----- Column 1 ---->
                 <div class="container_columnOne">
-                    <img class="container_columnOne_picture" src="Picture/beef-pixabay-removebg.png"/>
+                    <!----- Carousel ---->
+                    <button id="carouselButton" onclick="carouselButtonOne()">
+                        <i class="fa fa-circle" aria-hidden="true">
+                        </i>
+                    </button>
+                    <button id="carouselButton" onclick="carouselButtonTwo()">
+                        <i class="fa fa-circle" aria-hidden="true">
+                        </i>
+                    </button>
+                    <button id="carouselButton" onclick="carouselButtonThree()">
+                        <i class="fa fa-circle" aria-hidden="true">
+                        </i>
+                    </button>
+                    <button id="carouselButton" onclick="carouselButtonFour()">
+                        <i class="fa fa-circle" aria-hidden="true">
+                        </i>
+                    </button>
+                    <button id="carouselButton" onclick="carouselButtonFive()">
+                        <i class="fa fa-circle" aria-hidden="true">
+                        </i>
+                    </button>
+                    
+                    <img id="container_columnOne_picture" src="Picture/beef-pixabay-removebg.png" alt="Carousel"/>
+
                     <h2 class="container_columnOne_title">Classic Burger</h2>
+                    <div class="flexinfo">
+                        <div class="info">
+                            Fat - 26g
+                        </div>
+                        <div class="info">
+                            Saturation - 10g
+                        </div>
+                        <div class="info">
+                            Sugars - 10g
+                        </div>
+                        <div class="info">
+                            Salt - 10g
+                        </div>
+                    </div>
+
                     <p class="container_columnOne_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         Sed tincidunt finibus augue, gravida pharetra mi eleifend nec. 
                         Cras finibus nibh ut iaculis sollicitudin. 
                         In hac habitasse platea dictumst. 
                         Mauris maximus mauris malesuada enim tincidunt, in sodales purus iaculis. 
                     </p>
-                    <button class="container_columnOne_click_one">
-                        +
-                    </button>
-                    <button class="container_columnOne_click_two">
-                        0
-                    </button>
-                    <button class="container_columnOne_click_three">
-                        -
-                    </button>
+                    <div class="flexButton">
+                        <button id="addition" onclick="incrementButton()">
+                            +
+                        </button>
+                        <button id="result">
+                            0
+                        </button>
+                        <button id="substraction" onclick="decrementButton()">
+                            -
+                        </button>
+                        <div class="price">
+                            10€
+                        </div>
+                        <button class="shoppingCart">
+                            🛒
+                        </button>
+                    </div>
                 </div>
                  <!----- Column 2 ---->
                 <div class="container_columnTwo">
                     <div class="container_columnTwo_card">
                         <img class="container_columnTwo_card_picture" src="Picture/appetite-pixabay-removebg.png"/>
-                        <h2 class="container_columnTwo_card_title">Classic Burger</h2>
+                        <h4 class="container_columnTwo_card_title">Double Burger</h2>
                         <p class="container_columnTwo_card_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                             Sed tincidunt finibus augue, gravida pharetra mi eleifend nec. 
                         </p>
                     </div>
                     <div class="container_columnTwo_card">
                         <img class="container_columnTwo_card_picture" src="Picture/hamburger-pixabay-removebg.png"/>
-                        <h2 class="container_columnTwo_card_title">Classic Burger</h2>
+                        <h4 class="container_columnTwo_card_title">Cheese Burger</h2>
                         <p class="container_columnTwo_card_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                             Sed tincidunt finibus augue, gravida pharetra mi eleifend nec. 
                         </p>
@@ -70,13 +127,13 @@
                 <div class="container_columnThree">
                     <div class="container_columnThree_card">
                         <img class="container_columnThree_card_picture" src="Picture/food-pixabay-removebg.png"/>
-                        <h2 class="container_columnThree_card_title">Classic Burger</h2>
+                        <h4 class="container_columnThree_card_title">Meat Burger</h2>
                         <p class="container_columnThree_card_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         </p>
                     </div>
                     <div class="container_columnThree_card">
                         <img class="container_columnThree_card_picture" src="Picture/hamburger-pixabayTwo-removebg.png"/>
-                        <h2 class="container_columnThree_card_title">Classic Burger</h2>
+                        <h4 class="container_columnThree_card_title">Vegetarian Burger</h2>
                         <p class="container_columnThree_card_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                             Sed tincidunt finibus augue, gravida pharetra mi eleifend nec.
                         </p>
@@ -85,7 +142,7 @@
                 </div>
             </div>
         </main>
-
+        <script type="text/javascript" src="script.js"></script>
     </body>
 
     </html>

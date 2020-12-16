@@ -1,12 +1,13 @@
 /*-----------VAR-----------*/
     /*-PICTURE-*/
-$sizepictureLarge: 350px;
-$sizepictureMedium: 250px;
+$sizepictureLarge: 300px;
+$sizepictureMedium: 300px;
     /*-BORDER-*/
 $borderRadius: 25px;
     /*-COLOR-*/
 $backgroundWhite: white;
 $backgroundgraylight: #f8f7f5;
+$graybutton:#eff0f2;
     /*-TEXT-*/
 $center: center;
 $marginTextBurger:35px 35px;
@@ -28,6 +29,11 @@ $marginTextBurger:35px 35px;
      border: 1px #eff0f2;
 }
 
+@mixin tailleCartes(){
+    width: 350px;
+    height: 500px;
+}
+
 /*-----------ALL-----------*/
 * {
     margin: 0;
@@ -44,6 +50,25 @@ a {
     text-decoration: none;
 }
 
+h2{
+    font-family: 'Martel', serif;
+    font-size: 2.5rem ;
+}
+
+h4{
+    font-family: 'Martel', serif;
+    font-size: 1.5rem ;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem ;
+    font-style: italic;
+    font-weight: 400;
+    color: #838383;
+}
+
+
 button{
     border:none;
     border-radius: $borderRadius;
@@ -52,17 +77,33 @@ button{
 
 body {
     @include color(background,$backgroundgraylight);
+    /*-----------FLEX - TOTAL -----------*/
+    display: flex;
+}
+
+aside{
+    @include color(background,$backgroundWhite);
+    border-radius: $borderRadius;
+    width: 120px ;
+    height:1400px ;
+    margin-top: 100px;
+    margin-left: 90px;
+    border: 3px solid $backgroundgraylight;
+
+    /*-----------search-----------*/
+    .search{
+        margin-top: 60px;
+        }
 }
 
 main {
     @include color(background,$backgroundWhite);
-    @include margin();
     border-radius: $borderRadius;
     width: 1500px ;
     height:1400px ;
     margin-top: 100px;
 
-/*-----------MENU-----------*/
+    /*-----------MENU-----------*/
     #Menu {
     /*CONTAINER FLEX*/
     display: flex;
@@ -74,9 +115,9 @@ main {
     text-align: center;
     padding: 3px 3px;
     @include color(color,black);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 0,8em;
-    font-family: serif;
+    font-family: 'Martel', serif;
     margin-top: 60px;
   }
   
@@ -123,17 +164,24 @@ main {
                         ; 
     grid-column-gap: 40px;
     grid-row-gap: 40px;
-    margin: 60px 20px 20px 20px;
+    margin: 60px 40px 20px 40px;
+    height: 1300px;
+
 
     /*-----------CARD-----------*/
     &_columnOne {
         @include color(background,$backgroundWhite);
         border-radius: $borderRadius;
-        border: solid 1px #e8eaed;
+        border: 3px solid $backgroundgraylight;
         margin-bottom: 30px;
+
+        #carouselButton{
+            @include color(color,#d2d1d1);
+        }
 
         &_picture {
             width: $sizepictureLarge;
+            /*Permet de centrer l'image*/
             display: block;
             @include margin();
         }
@@ -142,43 +190,67 @@ main {
             margin: $marginTextBurger;
         }
 
+        .flexinfo{
+            display:flex;
+            .info{
+                @include margin();
+                border-radius: $borderRadius;
+                border: solid 2px #e8eaed;
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+        }
+
         &_text{
             margin: $marginTextBurger;
         }
+        /*-----BUTTON----*/
+        .flexButton{
+            display: flex;
 
-        &_click_one{
-            @include color(background,#eff0f2);
-            @include buttonNumber();
-            margin-right: -15px;
-            margin-left: 30px;
-            /*BORDER*/
-            border-radius: 10px;
-            border-style: none none none solid;
-        }
+            #addition{
+                @include color(background,$graybutton);
+                @include buttonNumber();
+                margin-right: -15px;
+                margin-left: 30px;
+                /*BORDER*/
+                border-radius: 10px;
+                border-style: none none none solid;
+            }
+    
+            #result{
+                @include color(background,$graybutton);
+                @include buttonNumber();
+                 /*BORDER*/
+                 border-radius: 0px;
+                 border-style: none none none none;
+            }
+    
+            #substraction{
+                @include color(background,$graybutton);
+                @include buttonNumber();
+                margin-left: -15px;
+                border-radius: 10px;
+                border-style: none solid none none;
+            }
 
-        &_click_two{
-            @include color(background,#eff0f2);
-            @include buttonNumber();
-             /*BORDER*/
-             border-radius: 0px;
-             border-style: none none none none;
-        }
-
-        &_click_three{
-            @include color(background,#eff0f2);
-            @include buttonNumber();
-            margin-left: -15px;
-            border-radius: 10px;
-            border-style: none solid none none;
-
+            .price{
+                font-size:4rem;
+            }
+    
+            .shoppingCart{
+                @include color(background,#e1ece5);
+                @include buttonNumber();
+                border-radius: 10px;
+                margin-left: 230px;
+            }
         }
     }
 
     .container_columnTwo_card {
         @include color(background,$backgroundgraylight);
+        @include tailleCartes();
         border-radius: $borderRadius;
-        width: 400px;
-        height: 500px;
         margin-bottom: 30px;
         text-align:$center;
 
@@ -202,9 +274,8 @@ main {
 
     .container_columnThree_card {
         @include color(background,$backgroundgraylight);
+        @include tailleCartes();
         border-radius: $borderRadius;
-        width: 400px;
-        height: 500px;
         margin-bottom: 30px;
 
         &_picture {

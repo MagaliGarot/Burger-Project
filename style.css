@@ -21,6 +21,24 @@ a {
   text-decoration: none;
 }
 
+h2 {
+  font-family: 'Martel', serif;
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-family: 'Martel', serif;
+  font-size: 1.5rem;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #838383;
+}
+
 button {
   border: none;
   border-radius: 25px;
@@ -28,12 +46,29 @@ button {
 
 body {
   background: #f8f7f5;
+  /*-----------FLEX - TOTAL -----------*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+aside {
+  background: white;
+  border-radius: 25px;
+  width: 120px;
+  height: 1400px;
+  margin-top: 100px;
+  margin-left: 90px;
+  border: 3px solid #f8f7f5;
+  /*-----------search-----------*/
+}
+
+aside .search {
+  margin-top: 60px;
 }
 
 main {
   background: white;
-  margin-right: auto;
-  margin-left: auto;
   border-radius: 25px;
   width: 1500px;
   height: 1400px;
@@ -58,9 +93,9 @@ main #Menu .Menu_link {
   text-align: center;
   padding: 3px 3px;
   color: black;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0,8em;
-  font-family: serif;
+  font-family: 'Martel', serif;
   margin-top: 60px;
 }
 
@@ -108,19 +143,26 @@ main .container {
       grid-template-areas: 'container--columnOne container--columnTwo container--columnThree' 'container--columnOne container--columnTwo container--columnThree'  'container--columnOne container--columnTwo container--columnThree' 'container--columnOne container--columnTwo container--columnThree';
   grid-column-gap: 40px;
   grid-row-gap: 40px;
-  margin: 60px 20px 20px 20px;
+  margin: 60px 40px 20px 40px;
+  height: 1300px;
   /*-----------CARD-----------*/
 }
 
 main .container_columnOne {
   background: white;
   border-radius: 25px;
-  border: solid 1px #e8eaed;
+  border: 3px solid #f8f7f5;
   margin-bottom: 30px;
+  /*-----BUTTON----*/
+}
+
+main .container_columnOne #carouselButton {
+  color: #d2d1d1;
 }
 
 main .container_columnOne_picture {
-  width: 350px;
+  width: 300px;
+  /*Permet de centrer l'image*/
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -130,11 +172,32 @@ main .container_columnOne_title {
   margin: 35px 35px;
 }
 
+main .container_columnOne .flexinfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .container_columnOne .flexinfo .info {
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 25px;
+  border: solid 2px #e8eaed;
+  padding: 10px 15px;
+  font-size: 12px;
+}
+
 main .container_columnOne_text {
   margin: 35px 35px;
 }
 
-main .container_columnOne_click_one {
+main .container_columnOne .flexButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .container_columnOne .flexButton #addition {
   background: #eff0f2;
   width: 40px;
   height: 65px;
@@ -147,7 +210,7 @@ main .container_columnOne_click_one {
   border-style: none none none solid;
 }
 
-main .container_columnOne_click_two {
+main .container_columnOne .flexButton #result {
   background: #eff0f2;
   width: 40px;
   height: 65px;
@@ -158,7 +221,7 @@ main .container_columnOne_click_two {
   border-style: none none none none;
 }
 
-main .container_columnOne_click_three {
+main .container_columnOne .flexButton #substraction {
   background: #eff0f2;
   width: 40px;
   height: 65px;
@@ -169,17 +232,31 @@ main .container_columnOne_click_three {
   border-style: none solid none none;
 }
 
+main .container_columnOne .flexButton .price {
+  font-size: 4rem;
+}
+
+main .container_columnOne .flexButton .shoppingCart {
+  background: #e1ece5;
+  width: 40px;
+  height: 65px;
+  /*BORDER*/
+  border: 1px #eff0f2;
+  border-radius: 10px;
+  margin-left: 230px;
+}
+
 main .container .container_columnTwo_card {
   background: #f8f7f5;
-  border-radius: 25px;
-  width: 400px;
+  width: 350px;
   height: 500px;
+  border-radius: 25px;
   margin-bottom: 30px;
   text-align: center;
 }
 
 main .container .container_columnTwo_card_picture {
-  width: 250px;
+  width: 300px;
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -197,14 +274,14 @@ main .container .container_columnTwo_card_text {
 
 main .container .container_columnThree_card {
   background: #f8f7f5;
-  border-radius: 25px;
-  width: 400px;
+  width: 350px;
   height: 500px;
+  border-radius: 25px;
   margin-bottom: 30px;
 }
 
 main .container .container_columnThree_card_picture {
-  width: 250px;
+  width: 300px;
   display: block;
   margin-right: auto;
   margin-left: auto;
