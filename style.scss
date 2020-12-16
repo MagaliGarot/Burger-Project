@@ -237,6 +237,10 @@ main {
         /*-----BUTTON----*/
         .flexButton{
             display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            .flexButton_bloc{
 
             #addition{
                 @include color(background,$graybutton);
@@ -263,6 +267,7 @@ main {
                 border-radius: 10px;
                 border-style: none solid none none;
             }
+        }
 
             .price{
                 font-size:4rem;
@@ -273,7 +278,7 @@ main {
                 @include color(background,#e1ece5);
                 @include buttonNumber();
                 border-radius: 10px;
-                margin-left: 380px;
+                margin-right: 30px;
             }
         }
     }
