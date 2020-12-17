@@ -1,7 +1,7 @@
 /*-----------VAR-----------*/
     /*-PICTURE-*/
 $sizepictureLarge: 300px;
-$sizepictureMedium: 300px;
+$sizepictureMedium: 280px;
     /*-BORDER-*/
 $borderRadius: 25px;
     /*-COLOR-*/
@@ -34,6 +34,18 @@ $marginTextBurger:35px 35px;
     height: 500px;
 }
 
+@mixin buttonKcal(){
+    @include margin();
+    @include color(background,$backgroundWhite);
+    border-radius: 50%; 
+    border: solid 2px #e8eaed;
+    padding: 10px 15px;
+    font-size: 12px;
+    font-weight: 500;
+    width: 60px;
+    height: 60px;
+}
+
 /*-----------ALL-----------*/
 * {
     margin: 0;
@@ -50,25 +62,6 @@ a {
     text-decoration: none;
 }
 
-h2{
-    font-family: 'Martel', serif;
-    font-size: 2.9rem ;
-}
-
-h4{
-    font-family: 'Martel', serif;
-    font-size: 1.5rem ;
-}
-
-p{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3rem ;
-    font-style: italic;
-    font-weight: 400;
-    color: #838383;
-}
-
-
 button{
     border:none;
     border-radius: $borderRadius;
@@ -81,11 +74,35 @@ body {
     display: flex;
 }
 
+
+/*-----------FONTS-----------*/
+
+h2{
+    font-family: 'Martel', serif;
+    font-size: 2.9rem ;
+}
+
+h4{
+    font-family: 'Martel', serif;
+    font-size: 1.5rem ;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem ;
+    font-style: italic;
+    font-weight: 400;
+    color: #838383;
+}
+
+/*--------BODY--------*/
+
+/*----ASIDE------*/
 aside{
     @include color(background,$backgroundWhite);
     border-radius: 25px 0px 0px 25px;
     width: 120px ;
-    height:1400px ;
+    height:1300px ;
     margin-top: 100px;
     margin-left: 90px;
     margin-right: 5px;
@@ -104,45 +121,55 @@ aside{
             /*Center*/
             }
 }
-
+    /*----MAIN------*/
 main {
     @include color(background,$backgroundWhite);
     border-radius: 0px 25px 25px 0px;
     width: 1500px ;
-    height:1400px ;
+    height:1300px ;
     margin-top: 100px;
 
-    /*-----------MENU-----------*/
+    /*-----------NAV-----------*/
     #Menu {
     /*CONTAINER FLEX*/
     display: flex;
     align-items: center;
 
   .Menu_link {
-    height: 6vw;
-    width: 6vw;
-    text-align: center;
-    padding: 3px 3px;
     @include color(color,black);
+    height: 80px;
+    width: 150px;
+    padding: 3px 3px;
+    margin-top: 50px;
+    /*FONT*/
+    text-align: center;
     font-weight: 800;
     font-size: 0,8em;
     font-family: 'Martel', serif;
-    margin-top: 60px;
   }
   
-  .Menu_link:hover {
+  .Menu_link:hover, .Menu_link_smallball:hover {
     color:#f06c4e;
     font-weight: 800;
     font-size: 1em;
+    opacity: 100%
+  }
+
+  .Menu_link_smallball{
+    font-size: 8px;
+    opacity: 0%;
   }
 
 }
 
+    /*BUTTON LOG IN ET SIGN UP*/
 .click{
+    /*FLEX*/
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: -120px;
+
+    margin-top: -90px;
     margin-right: 20px;
 
 .click_log{
@@ -185,6 +212,7 @@ main {
     grid-column-gap: 40px;
     grid-row-gap: 40px;
     margin: 60px 40px 20px 40px;
+
     height: 1300px;
 
 
@@ -198,16 +226,32 @@ main {
         /*CAROUSEL BUNTON*/
 
         .carousel{
+            display: flex;
             margin: $marginTextBurger;
+            align-items: flex-start;
         }
 
         #carouselButton{
             @include color(color,#d2d1d1);
+            margin-right:5px;
         }
 
         #carouselButton:hover{
             @include color(color,#f06d4f);
         }
+        /*BUTTON KCAL*/
+        .kcal{
+                @include margin();
+                @include color(background,$backgroundWhite);
+                @include buttonKcal();
+                margin-left: 405px;
+        }
+
+        .kcal:hover{
+            @include color(background,#dcf49a);
+        }
+
+        /*TITLE AND PICTURE CARD ONE*/
 
         &_picture {
             width: $sizepictureLarge;
@@ -220,8 +264,12 @@ main {
             margin: $marginTextBurger;
         }
 
+         /*-----------SUGARS SALT-----------*/
+
         .flexinfo{
+            /*FLEX*/
             display:flex;
+
             .info{
                 @include margin();
                 border-radius: $borderRadius;
@@ -234,22 +282,28 @@ main {
         &_text{
             margin: $marginTextBurger;
         }
-        /*-----BUTTON----*/
+        /*-----BUTTON + & - ----*/
         .flexButton{
+            /*FLEX*/
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
+            margin-bottom: 20px;
 
             .flexButton_bloc{
+                display: flex;
+            }
 
             #addition{
                 @include color(background,$graybutton);
+                @include color(color,green);
                 @include buttonNumber();
                 margin-right: -15px;
                 margin-left: 30px;
                 /*BORDER*/
                 border-radius: 10px;
                 border-style: none none none solid;
+                font-size: 20px;
             }
     
             #result{
@@ -258,6 +312,7 @@ main {
                  /*BORDER*/
                  border-radius: 0px;
                  border-style: none none none none;
+                 font-size: 20px;
             }
     
             #substraction{
@@ -266,29 +321,58 @@ main {
                 margin-left: -15px;
                 border-radius: 10px;
                 border-style: none solid none none;
+                font-size: 20px;
             }
         }
-
+        /*-----------TEXT PRICE-----------*/
             .price{
                 font-size:4rem;
                 font-family: 'Kaushan Script', cursive;
             }
-    
+         /*-----------BUTTON SHOPPING-----------*/
             .shoppingCart{
                 @include color(background,#e1ece5);
+                @include color(color,green);
                 @include buttonNumber();
+
+                display: inline-block;
                 border-radius: 10px;
                 margin-right: 30px;
+                width: 70px;
+                height: 70px;
+                font-size: 25px;
+                line-height: 3;
+                 /*invisible text*/
+                 /*permet de couper ce qui dépasse*/
+                overflow: hidden;
+                /*TRANSITION*/
+                transition: all 0.3s ease-out;
+            }
+
+            .shoppingCart:hover{
+                width: 300px;
+                height: 70px;
             }
         }
     }
-
+    /*-----------OTHER CARD 2 & 3-----------*/
     .container_columnTwo_card {
         @include color(background,$backgroundgraylight);
         @include tailleCartes();
         border-radius: $borderRadius;
         margin-bottom: 30px;
         text-align:$center;
+
+        /*--KCAL--*/
+        .kcalTwo{
+            @include buttonKcal();
+            margin-left: 220px;
+            margin-top: 15px;
+        }
+
+        .kcalTwo:hover{
+            @include color(background,#dcf49a);
+        }
 
         &_picture {
             width: $sizepictureMedium;
@@ -307,12 +391,22 @@ main {
             margin: $marginTextBurger;
         }
     }
-
+    /*-----------CARD 4 & 5-----------*/
     .container_columnThree_card {
         @include color(background,$backgroundgraylight);
         @include tailleCartes();
         border-radius: $borderRadius;
         margin-bottom: 30px;
+
+        .kcalThree{
+            @include buttonKcal();
+            margin-left: 260px;
+            margin-top: 15px;
+        }
+
+        .kcalThree:hover{
+            @include color(background,#dcf49a);
+        }
 
         &_picture {
             width: $sizepictureMedium;
@@ -332,4 +426,3 @@ main {
     }
 }    
 
-}
