@@ -1,7 +1,7 @@
 /*-----------VAR-----------*/
     /*-PICTURE-*/
 $sizepictureLarge: 300px;
-$sizepictureMedium: 280px;
+$sizepictureMedium: 200px;
     /*-BORDER-*/
 $borderRadius: 25px;
     /*-COLOR-*/
@@ -12,7 +12,7 @@ $graybutton:#eff0f2;
 $center: center;
 $marginTextBurger:35px 35px;
 
-/*-----------Mixin-----------*/
+/*-----------@Mixin-----------*/
 @mixin color($element, $value){
     #{$element} : $value;
 }
@@ -44,6 +44,54 @@ $marginTextBurger:35px 35px;
     font-weight: 500;
     width: 60px;
     height: 60px;
+}
+
+@mixin buttonshoppingother(){
+    @include color(background,#e1ece5);
+    @include color(color,green);
+    @include buttonNumber();
+    border-radius: 10px;
+    width: 70px;
+    height: 70px;
+    font-size: 25px;
+    line-height: 3;
+    }
+
+    /*------BUTTON + & - -------*/
+@mixin flexButton(){
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+@mixin addition(){
+    @include color(background,$graybutton);
+    @include color(color,green);
+    @include buttonNumber();
+    margin-right: -15px;
+    margin-left: 30px;
+    /*BORDER*/
+    border-radius: 10px;
+    border-style: none none none solid;
+    font-size: 20px;
+}
+
+@mixin result(){
+    @include color(background,$graybutton);
+    @include buttonNumber();
+     /*BORDER*/
+     border-radius: 0px;
+     border-style: none none none none;
+     font-size: 20px;
+}
+
+@mixin substraction(){
+    @include color(background,$graybutton);
+    @include buttonNumber();
+    margin-left: -8px;
+    border-radius: 10px;
+    border-style: none solid none none;
+    font-size: 20px;
 }
 
 /*-----------ALL-----------*/
@@ -147,17 +195,15 @@ main {
     font-size: 0,8em;
     font-family: 'Martel', serif;
   }
+
+  .Menu_link_smallball{
+    color: white;
+    font-size: 8px;
+  }
   
   .Menu_link:hover, .Menu_link_smallball:hover {
     color:#f06c4e;
     font-weight: 800;
-    font-size: 1em;
-    opacity: 100%
-  }
-
-  .Menu_link_smallball{
-    font-size: 8px;
-    opacity: 0%;
   }
 
 }
@@ -260,7 +306,7 @@ main {
             @include margin();
         }
 
-        &_title{
+        #container_columnOne_title{
             margin: $marginTextBurger;
         }
 
@@ -285,47 +331,26 @@ main {
         /*-----BUTTON + & - ----*/
         .flexButton{
             /*FLEX*/
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            margin-bottom: 20px;
+            @include flexButton();
 
             .flexButton_bloc{
                 display: flex;
             }
 
             #addition{
-                @include color(background,$graybutton);
-                @include color(color,green);
-                @include buttonNumber();
-                margin-right: -15px;
-                margin-left: 30px;
-                /*BORDER*/
-                border-radius: 10px;
-                border-style: none none none solid;
-                font-size: 20px;
+                @include addition();
             }
     
             #result{
-                @include color(background,$graybutton);
-                @include buttonNumber();
-                 /*BORDER*/
-                 border-radius: 0px;
-                 border-style: none none none none;
-                 font-size: 20px;
+                @include result();
             }
     
             #substraction{
-                @include color(background,$graybutton);
-                @include buttonNumber();
-                margin-left: -15px;
-                border-radius: 10px;
-                border-style: none solid none none;
-                font-size: 20px;
+                @include substraction();
             }
         }
         /*-----------TEXT PRICE-----------*/
-            .price{
+            #price{
                 font-size:4rem;
                 font-family: 'Kaushan Script', cursive;
             }
@@ -352,16 +377,19 @@ main {
             .shoppingCart:hover{
                 width: 300px;
                 height: 70px;
+                @include color(background,#dcf49a);
             }
         }
     }
+
     /*-----------OTHER CARD 2 & 3-----------*/
+
     .container_columnTwo_card {
         @include color(background,$backgroundgraylight);
         @include tailleCartes();
         border-radius: $borderRadius;
-        margin-bottom: 30px;
         text-align:$center;
+        margin-bottom: 30px;
 
         /*--KCAL--*/
         .kcalTwo{
@@ -383,12 +411,48 @@ main {
         &_title{
             text-align: $center;
             margin: $marginTextBurger;
-
         }
     
         &_text{
             text-align: $center;
             margin: $marginTextBurger;
+        }
+
+        .flexButton{
+            /*FLEX*/
+            @include flexButton();
+            margin-right: 30px;
+
+            .flexButton_bloc{
+                display: flex;
+            }
+
+            .addition{
+                @include addition();
+            }
+    
+            .result{
+                @include result();
+            }
+    
+            .substraction{
+                @include substraction();
+            }
+
+              /*-----------TEXT PRICE-----------*/
+              .price{
+                font-size:3rem;
+                font-family: 'Kaushan Script', cursive;
+            }
+
+        .shoppingButtonTwo{
+            @include buttonshoppingother();
+        }
+
+        .shoppingButtonTwo:hover{
+            @include color(background,#dcf49a);
+        }
+        
         }
     }
     /*-----------CARD 4 & 5-----------*/
@@ -397,6 +461,7 @@ main {
         @include tailleCartes();
         border-radius: $borderRadius;
         margin-bottom: 30px;
+        margin-right: 15px;
 
         .kcalThree{
             @include buttonKcal();
@@ -423,6 +488,43 @@ main {
             text-align: $center;
             margin: $marginTextBurger;
         }
-    }
-}    
 
+        /*FLEX BUTTON*/
+        .flexButton{
+            /*FLEX*/
+            @include flexButton();
+            margin-right: 30px;
+
+
+            .flexButton_bloc{
+                display: flex;
+            }
+
+            .addition{
+                @include addition();
+            }
+    
+            .result{
+                @include result();
+            }
+    
+            .substraction{
+                @include substraction();
+            }
+
+              /*-----------TEXT PRICE-----------*/
+              .price{
+                font-size:3rem;
+                font-family: 'Kaushan Script', cursive;
+            }
+
+        .shoppingButtonThree{
+            @include buttonshoppingother();
+        }
+
+        .shoppingButtonThree:hover{
+            @include color(background,#dcf49a);
+        }
+        }
+    }
+}

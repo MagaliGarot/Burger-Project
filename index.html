@@ -1,3 +1,8 @@
+<!-- Le projet :
+Réalisation d'une page web d'après un wireframe existant réalisé par Elena Sinianskaya.
+Lien vers l'exercice : https://github.com/becodeorg/LIE-Hamilton-4.25/blob/master/01-main-course/02-the-hills/03-dribbble-challenges.md
+Lien vers le wireframe de la graphiste : https://dribbble.com/shots/12510725-Burger/attachments/4118613?mode=media -->
+
 <!DOCTYPE html>
  <!----- The humburger picture are from pixabay ---->
 <html lang="fr">
@@ -93,7 +98,7 @@
                     
                     <img id="container_columnOne_picture" src="Picture/beef-pixabay-removebg.png" alt="Carousel"/>
 
-                    <h2 class="container_columnOne_title">Classic Burger</h2>
+                    <h2 id="container_columnOne_title">Classic Burger</h2>
                     <div class="flexinfo">
                         <div class="info">
                             Fat - 26g
@@ -127,7 +132,7 @@
                                 -
                             </button>
                         </div>
-                        <div class="price">
+                        <div id="price">
                             10€
                         </div>
                         <button class="shoppingCart">
@@ -145,11 +150,29 @@
                             472 Kcal
                         </button>
                         <img class="container_columnTwo_card_picture" src="Picture/appetite-pixabay-removebg.png"/>
-                        <h4 class="container_columnTwo_card_title">Double Burger</h2>
+                        <h4 class="container_columnTwo_card_title">Double Burger</h4>
                         <p class="container_columnTwo_card_text">
-                            Gravida pharetra nec. Ipsum dolor sit amet, elit. 
-                            Sed finibus augue.
+                            Gravida, elit. 
                         </p>
+                        <div class="flexButton">
+                            <div class="flexButton_bloc">
+                                <button class="addition" onclick="incrementButton()">
+                                    +
+                                </button>
+                                <button class="result">
+                                    0
+                                </button>
+                                <button class="substraction" onclick="decrementButton()">
+                                    -
+                                </button>
+                            </div>
+                            <div class="price">
+                                14€
+                            </div>
+                            <button class="shoppingButtonTwo">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="container_columnTwo_card">
                         <button class="kcalTwo">
@@ -161,6 +184,25 @@
                             Lorem ipsum dolor sit amet.
                             Sed tincidunt, gravida pharetra mi eleifend nec. 
                         </p>
+                        <div class="flexButton">
+                            <div class="flexButton_bloc">
+                                <button class="addition" onclick="incrementButton()">
+                                    +
+                                </button>
+                                <button class="result">
+                                    0
+                                </button>
+                                <button class="substraction" onclick="decrementButton()">
+                                    -
+                                </button>
+                            </div>
+                            <div class="price">
+                                8€
+                            </div>
+                            <button class="shoppingButtonTwo">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <!----- Column 3 ---->
@@ -173,6 +215,25 @@
                         <h4 class="container_columnThree_card_title">Meat Burger</h2>
                         <p class="container_columnThree_card_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         </p>
+                        <div class="flexButton">
+                            <div class="flexButton_bloc">
+                                <button class="addition" onclick="incrementButton()">
+                                    +
+                                </button>
+                                <button class="result">
+                                    0
+                                </button>
+                                <button class="substraction" onclick="decrementButton()">
+                                    -
+                                </button>
+                            </div>
+                            <div class="price">
+                                10€
+                            </div>
+                            <button class="shoppingButtonThree">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="container_columnThree_card">
                         <button class="kcalThree">
@@ -180,9 +241,30 @@
                         </button>
                         <img class="container_columnThree_card_picture" src="Picture/hamburger-pixabayTwo-removebg.png"/>
                         <h4 class="container_columnThree_card_title">Vegetarian Burger</h2>
-                        <p class="container_columnThree_card_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Sed tincidunt finibus augue, gravida pharetra mi eleifend nec.
+                        <p class="container_columnThree_card_text">
+                            Lorem ipsum dolor sit amet, adipiscing elit. 
+                            Gravida pharetra mi eleifend nec.
                         </p>
+                        <!--Button shopping-->
+                        <div class="flexButton">
+                            <div class="flexButton_bloc">
+                                <button class="addition" onclick="incrementButton()">
+                                    +
+                                </button>
+                                <button class="result">
+                                    0
+                                </button>
+                                <button class="substraction" onclick="decrementButton()">
+                                    -
+                                </button>
+                            </div>
+                            <div class="price">
+                                9€
+                            </div>
+                            <button class="shoppingButtonThree">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 </div>

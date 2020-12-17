@@ -1,4 +1,6 @@
+/*--------------- BUTTON + & - --------------- */
 /*--------------- + --------------- */
+
 function incrementButton(){
     let element = document.getElementById('result');
     let value = element.innerHTML;
@@ -10,6 +12,7 @@ function incrementButton(){
 }
 
 /*---------------   -   ---------------*/
+
 function decrementButton(){
     let element = document.getElementById('result');
     let value = element.innerHTML;
@@ -23,7 +26,9 @@ sinon l'e programme ne peut pas rentrer dans la condition */
 }
 
 /* ---------------Carousel--------------- */
+/*CLASSIC BURGER*/
 function carouselButtonOne(){
+
 
     let gallery= [
         "Picture/beef-pixabay-removebg.png",
@@ -37,8 +42,12 @@ function carouselButtonOne(){
             index = 0;
         }
         image.src = gallery[index];
-}
 
+        /*TITRE PRICE*/
+        document.getElementById("container_columnOne_title").innerText = "Classic Burger";
+        document.getElementById("price").innerText = "10€";
+}
+/*DOUBLE BURGER*/ 
 function carouselButtonTwo(){
 
     let gallery= [
@@ -53,8 +62,12 @@ function carouselButtonTwo(){
             index = 0;
         }
         image.src = gallery[index];
-}
 
+         /*TITRE PRICE*/
+        document.getElementById("container_columnOne_title").innerText = "Double Burger";
+        document.getElementById("price").innerText = "14€";
+}
+/*MEAT BURGER*/
 function carouselButtonThree(){
 
     let gallery= [
@@ -69,8 +82,12 @@ function carouselButtonThree(){
             index = 0;
         }
         image.src = gallery[index];
-}
 
+         /*TITRE PRICE*/
+        document.getElementById("container_columnOne_title").innerText = "Meat Burger";
+        document.getElementById("price").innerText = "10€";
+}
+/*VEGETARIAN BURGER*/ 
 function carouselButtonFour(){
 
     let gallery= [
@@ -85,8 +102,12 @@ function carouselButtonFour(){
             index = 0;
         }
         image.src = gallery[index];
-}
 
+         /*TITRE PRICE*/
+        document.getElementById("container_columnOne_title").innerText = "Vegetarian Burger";
+        document.getElementById("price").innerText = "9€";
+}
+/*CHEESE BURGER*/ 
 function carouselButtonFive(){
 
     let gallery= [
@@ -101,6 +122,10 @@ function carouselButtonFive(){
             index = 0;
         }
         image.src = gallery[index];
+        
+         /*TITRE PRICE*/
+        document.getElementById("container_columnOne_title").innerText = "Cheese Burger";
+        document.getElementById("price").innerText = "8€";
 }
 
 
